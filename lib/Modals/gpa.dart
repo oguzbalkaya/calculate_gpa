@@ -42,9 +42,9 @@ class GPA{
     _system = value;
   }
 
-  List<Lesson> get lessenList => _lessonList;
+  List<Lesson> get lessonList => _lessonList;
 
-  set lessenList(List<Lesson> value) {
+  set lessonList(List<Lesson> value) {
     _lessonList = value;
   }
 
@@ -57,6 +57,7 @@ class GPA{
       for(int i=0;i<this._lessonList.length;i++){
         totalCredit+=this._lessonList[i].credit;
         totalGrade+=this._lessonList[i].credit*this._lessonList[i].grade;
+        }
 
         if(_type==0){
           return [totalGrade/totalCredit,1]; // [0] -> term ,[1] -> general
@@ -65,7 +66,7 @@ class GPA{
           return [totalGrade/totalCredit,(current+totalGrade)/(_currentCredit+totalCredit)];
         }
 
-        }
+       
 
   }
 
